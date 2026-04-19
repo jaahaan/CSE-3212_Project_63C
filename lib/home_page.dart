@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,19 +16,44 @@ class HomePage extends StatelessWidget {
         //   IconButton(onPressed: () {}, icon: Icon(Icons.person_2_outlined)),
         // ],
       ),
-      body: Column(
-        children: [
-          Padding(padding: const EdgeInsets.all(10), child: Text("Hello 63C")),
-          Text("Welcome to the homepage"),
-          Container(
-            height: 300,
-            width: 400,
-            padding: EdgeInsets.all(20),
-            margin: EdgeInsets.all(20),
-            color: Colors.blueGrey,
-            child: Text("Container"),
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Text(
+                "Hello 63C",
+                style: GoogleFonts.lobster(
+                  fontSize: 20,
+                  color: Colors.amber,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Text("Welcome to the homepage"),
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: Card(color: Colors.cyan, child: Text("Card")),
+            ),
+            Container(
+              height: 300,
+              width: 400,
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(20),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.blueGrey,
+                border: Border.all(width: 5, color: Colors.cyan),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+              ),
+              child: Image.asset("assets/images/flutter.png"),
+            ),
+            Image.network(
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/960px-Image_created_with_a_mobile_phone.png",
+            ),
+          ],
+        ),
       ),
 
       floatingActionButton: FloatingActionButton(
