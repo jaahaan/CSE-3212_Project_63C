@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project_63c/converter_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,6 +32,40 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Text("Welcome to the homepage"),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ConverterPage();
+                        },
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey,
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(120, 50),
+                  ),
+                  child: Text("Converter Page"),
+                ),
+                SizedBox(width: 10),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    side: BorderSide(color: Colors.blueGrey, width: 2),
+                  ),
+                  child: Text("TextButton"),
+                ),
+                OutlinedButton(onPressed: () {}, child: Text("Outlined")),
+                IconButton(onPressed: () {}, icon: Icon(Icons.logout)),
+              ],
+            ),
             SizedBox(
               height: 200,
               width: 200,
@@ -47,10 +82,22 @@ class HomePage extends StatelessWidget {
                 border: Border.all(width: 5, color: Colors.cyan),
                 borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
-              child: Image.asset("assets/images/flutter.png"),
+              // child: Image.asset("assets/images/flutter.png"),
             ),
             Image.network(
               "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/960px-Image_created_with_a_mobile_phone.png",
+            ),
+            TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.brown,
+                foregroundColor: Colors.white,
+                elevation: 500,
+                side: BorderSide(color: Colors.black),
+                shadowColor: Colors.brown,
+                fixedSize: Size(100, 10),
+              ),
+              child: Text("Upolad"),
             ),
           ],
         ),
