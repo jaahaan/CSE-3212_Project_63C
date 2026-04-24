@@ -69,7 +69,10 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 200,
               width: 200,
-              child: Card(color: Colors.cyan, child: Text("Card")),
+              child: Card(
+                color: Colors.cyan,
+                child: Image.asset("assets/images/flutter.png"),
+              ),
             ),
             Container(
               height: 300,
